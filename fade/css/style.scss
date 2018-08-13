@@ -1,0 +1,380 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  list-style: none;
+}
+
+.horizontal_wrap.horizontal_wrap_how {
+  height: 580px;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  background: url('../img/production/bg.jpg') right bottom no-repeat;
+  @media only screen and (max-width: 1440px) and (min-width: 1281px) {
+    height: 440px;
+    background: url('../img/production/bg.jpg') 0 bottom no-repeat;
+    background-size: contain;
+  }
+  @media only screen and (max-width: 1280px) and (min-width: 1024px) {
+    height: 371px;
+    background: url('../img/production/bg.jpg') right bottom no-repeat;
+    background-size: contain;
+  }
+}
+
+.s_wrap {
+  height: 100%;
+  width: 1296px;
+  margin: 0 auto;
+  position: relative;
+  @media only screen and (max-width: 1440px) and (min-width: 1281px) {
+    width: 1200px;
+  }
+  @media only screen and (max-width: 1280px) and (min-width: 1024px) {
+    width: 960px;
+  }
+}
+
+.prod_how_leftblock {
+  position: absolute;
+  top: 40px;
+  width: 300px;
+  .h2_i {
+    font-family: Roboto,sans-serif;
+    margin: 0 0 14px;
+    font-size: 18px;
+    font-weight: 500;
+    color: #323232;
+  }
+  .prod_how_leftblock_text {
+    font-family: Roboto,sans-serif;
+    color: #323232;
+  }
+}
+
+.prod_how_rightblock {
+  position: absolute;
+  top: 40px;
+  width: 300px;
+  right: 200px;
+  .h2_i {
+    font-family: Roboto,sans-serif;
+    margin: 0 0 14px;
+    font-size: 18px;
+    font-weight: 500;
+    color: #323232;
+  }
+  .prod_how_leftblock_text {
+    font-family: Roboto,sans-serif;
+    color: #323232;
+  }
+}
+
+.detail__container,
+.detail-list,
+.detail-item {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+.detail__container.swiper-container {
+  overflow: visible !important;
+}
+
+.detail-item {
+  visibility: hidden;
+  opacity: 0;
+  &.swiper-slide-active {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+.how_detail1 {
+  background: url('../img/prod_parallax1.png') no-repeat 50% 50%;
+  width: 544px;
+  height: 520px;
+  top: 70px;
+  left: 0;
+  z-index: 2;
+  pointer-events: none;
+  position: absolute;
+  @media screen and (min-width: 1281px) and (max-width: 1440px) {
+    top: 40px;
+    left: -50px;
+    -webkit-transform: scale(.7);
+    -moz-transform: scale(.7);
+    -ms-transform: scale(.7);
+    -o-transform: scale(.7);
+    transform: scale(.7);
+  }
+  @media screen and (min-width: 768px) and (max-width: 1280px) {
+    top: 0;
+    left: -100px;
+    -webkit-transform: scale(.5);
+    -moz-transform: scale(.5);
+    -ms-transform: scale(.5);
+    -o-transform: scale(.5);
+    transform: scale(.5);
+  }
+  @media screen and (max-width: 767px) {
+    display: none;
+  }
+}
+
+.how_detail2 {
+  background: url('../img/prod_parallax2.png') no-repeat;
+  width: 710px;
+  height: 434px;
+  bottom: -40px;
+  left: -76px;
+  pointer-events: none;
+  position: absolute;
+  @media screen and (min-width: 1281px) and (max-width: 1440px) {
+    width: 500px;
+    background-size: contain;
+    height: 300px;
+  }
+  @media screen and (min-width: 1024px) and (max-width: 1280px) {
+    background-size: contain;
+    width: 350px;
+    height: 218px;
+  }
+  @media screen and (min-width: 768px) and (max-width: 1023px) {
+    background-size: cover;
+    width: 350px;
+    height: 218px;
+  }
+  @media screen and (max-width: 767px) {
+    display: none;
+  }
+}
+
+.how_detail3 {
+  background: url('../img/prod_parallax3.png') no-repeat;
+  width: 821px;
+  height: 436px;
+  right: 0;
+  top: 127px;
+  pointer-events: none;
+  position: absolute;
+  z-index: 3;
+  @media screen and (min-width: 1281px) and (max-width: 1440px) {
+    top: 112px;
+    width: 600px;
+    background-size: contain;
+    height: 300px;
+  }
+  @media screen and (min-width: 1024px) and (max-width: 1280px) {
+    top: 112px;
+    background-size: contain;
+    width: 500px;
+    height: 300px;
+  }
+  @media screen and (min-width: 768px) and (max-width: 1023px) {
+    top: 112px;
+    background-size: contain;
+    width: 500px;
+    height: 300px;
+  }
+  @media screen and (max-width: 767px) {
+    display: none;
+  }
+}
+
+.how_detail4 {
+  background: url('../img/prod_parallax4.png') no-repeat 50% 50%;
+  width: 563px;
+  height: 356px;
+  top: 90px;
+  left: 7px;
+  z-index: 2;
+  pointer-events: none;
+  position: absolute;
+  @media screen and (min-width: 1281px) and (max-width: 1440px) {
+    top: 70px;
+    left: -50px;
+    -webkit-transform: scale(.7);
+    -moz-transform: scale(.7);
+    -ms-transform: scale(.7);
+    -o-transform: scale(.7);
+    transform: scale(.7);
+  }
+  @media screen and (min-width: 768px) and (max-width: 1280px) {
+    top: 80px;
+    left: -100px;
+    -webkit-transform: scale(.55);
+    -moz-transform: scale(.55);
+    -ms-transform: scale(.55);
+    -o-transform: scale(.55);
+    transform: scale(.55);
+  }
+  @media screen and (max-width: 767px) {
+    display: none;
+  }
+}
+
+.how_detail5 {
+  background: url('../img/prod_parallax5.png') no-repeat;
+  width: 743px;
+  height: 458px;
+  bottom: -64px;
+  left: -30px;
+  pointer-events: none;
+  position: absolute;
+  @media screen and (min-width: 1281px) and (max-width: 1440px) {
+    bottom: -117px;
+    left: -54px;
+    -webkit-transform: scale(.8);
+    -moz-transform: scale(.8);
+    -ms-transform: scale(.8);
+    -o-transform: scale(.8);
+    transform: scale(.8);
+  }
+  @media screen and (min-width: 768px) and (max-width: 1280px) {
+    bottom: -150px;
+    left: -80px;
+    -webkit-transform: scale(.5);
+    -moz-transform: scale(.5);
+    -ms-transform: scale(.5);
+    -o-transform: scale(.5);
+    transform: scale(.5);
+  }
+  @media screen and (max-width: 767px) {
+    display: none;
+  }
+}
+
+.how_detail6 {
+  background: url('../img/prod_parallax6.png') no-repeat 50% 50%;
+  width: 354px;
+  height: 246px;
+  top: 160px;
+  left: 100px;
+  z-index: 2;
+  pointer-events: none;
+  position: absolute;
+  -webkit-transform: scale(1.04);
+  -moz-transform: scale(1.04);
+  -ms-transform: scale(1.04);
+  -o-transform: scale(1.04);
+  transform: scale(1.04);
+  @media screen and (min-width: 1281px) and (max-width: 1440px) {
+    top: 140px;
+    left: 50px;
+    -webkit-transform: scale(.8);
+    -moz-transform: scale(.8);
+    -ms-transform: scale(.8);
+    -o-transform: scale(.8);
+    transform: scale(.8);
+  }
+  @media screen and (min-width: 768px) and (max-width: 1280px) {
+    top: 100px;
+    left: 70px;
+    -webkit-transform: scale(.55);
+    -moz-transform: scale(.55);
+    -ms-transform: scale(.55);
+    -o-transform: scale(.55);
+    transform: scale(.55);
+  }
+  @media screen and (max-width: 767px) {
+    display: none;
+  }
+}
+
+.how_detail7 {
+  background: url('../img/prod_parallax7.png') no-repeat 50% 50%;
+  width: 545px;
+  height: 377px;
+  bottom: -80px;
+  left: -46px;
+  pointer-events: none;
+  position: absolute;
+  @media screen and (min-width: 1281px) and (max-width: 1440px) {
+    bottom: -117px;
+    left: -54px;
+    -webkit-transform: scale(.8);
+    -moz-transform: scale(.8);
+    -ms-transform: scale(.8);
+    -o-transform: scale(.8);
+    transform: scale(.8);
+  }
+  @media screen and (min-width: 768px) and (max-width: 1280px) {
+    bottom: -115px;
+    left: -80px;
+    -webkit-transform: scale(.5);
+    -moz-transform: scale(.5);
+    -ms-transform: scale(.5);
+    -o-transform: scale(.5);
+    transform: scale(.5);
+  }
+  @media screen and (max-width: 767px) {
+    display: none;
+  }
+}
+
+.how_detail8 {
+  background: url('../img/prod_parallax8.png') no-repeat 50% 50%;
+  width: 441px;
+  height: 298px;
+  top: 120px;
+  left: 42px;
+  z-index: 2;
+  pointer-events: none;
+  position: absolute;
+  @media screen and (min-width: 1281px) and (max-width: 1440px) {
+    top: 120px;
+    left: 50px;
+    -webkit-transform: scale(.8);
+    -moz-transform: scale(.8);
+    -ms-transform: scale(.8);
+    -o-transform: scale(.8);
+    transform: scale(.8);
+  }
+  @media screen and (min-width: 768px) and (max-width: 1280px) {
+    top: 100px;
+    left: -44px;
+    -webkit-transform: scale(.55);
+    -moz-transform: scale(.55);
+    -ms-transform: scale(.55);
+    -o-transform: scale(.55);
+    transform: scale(.55);
+  }
+  @media screen and (max-width: 767px) {
+    display: none;
+  }
+}
+
+.how_detail9 {
+  background: url('../img/prod_parallax9.png') no-repeat;
+  width: 732px;
+  height: 470px;
+  bottom: -152px;
+  left: -135px;
+  pointer-events: none;
+  position: absolute;
+  @media screen and (min-width: 1281px) and (max-width: 1440px) {
+    bottom: -200px;
+    left: -80px;
+    -webkit-transform: scale(.8);
+    -moz-transform: scale(.8);
+    -ms-transform: scale(.8);
+    -o-transform: scale(.8);
+    transform: scale(.8);
+  }
+  @media screen and (min-width: 768px) and (max-width: 1280px) {
+    bottom: -180px;
+    left: -90px;
+    -webkit-transform: scale(.5);
+    -moz-transform: scale(.5);
+    -ms-transform: scale(.5);
+    -o-transform: scale(.5);
+    transform: scale(.5);
+  }
+  @media screen and (max-width: 767px) {
+    display: none;
+  }
+}
