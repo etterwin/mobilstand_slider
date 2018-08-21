@@ -8,123 +8,196 @@
     <link href="css/style.css" rel="stylesheet"/>
     <link rel="stylesheet" href="css/swiper.css">
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/js/swiper.jquery.js"></script>
     <script src="js/main.js"></script>
 </head>
 <body>
 
-<span class="slider-demo open-container" data-containerid="slider">Open</span>
 
-<div class="slider-overlay" data-container="slider">
-    <div class="slider-wrapper">
+<div class="slider-gallery-wrapper">
 
-        <span class="slider-close close-container" data-containerid="slider"></span>
+    <section class="slider-gallery-prev-wrapper">
 
-        <div class="slider__container swiper-container">
-            <ul class="slider-list swiper-wrapper">
-                <li class="slider-item swiper-slide">
-                    <div class="slider-item-img-wrapper">
-                        <img src="photo/1.jpeg" class="slider-item-img" alt=""/>
+        <div class="slider-gallery-prev swiper-container gallery-thumbs">
+            <ul class="slider-gallery-list-prev swiper-wrapper">
+                <li class="slider-gallery-item-prev swiper-slide">
+                    <div class="slider-gallery-item-prev-wrapper">
+                        <img src="photo/demo/1.jpeg" class="slider-gallery-item-prev-img" alt=""/>
                     </div>
-                    <p class="slider-item-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                        exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-                        reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-                        occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-                        laborum.</p>
                 </li>
-                <li class="slider-item swiper-slide">
-                    <div class="slider-item-img-wrapper">
-                        <img src="photo/2.jpg" class="slider-item-img" alt=""/>
+                <li class="slider-gallery-item-prev swiper-slide">
+                    <div class="slider-gallery-item-prev-wrapper">
+                        <img src="photo/demo/2.jpg" class="slider-gallery-item-prev-img" alt=""/>
                     </div>
-                    <p class="slider-item-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua.</p>
                 </li>
-                <li class="slider-item swiper-slide">
-                    <div class="slider-item-img-wrapper">
-                        <img src="photo/3.jpg" class="slider-item-img" alt=""/>
+                <li class="slider-gallery-item-prev swiper-slide">
+                    <div class="slider-gallery-item-prev-wrapper">
+                        <img src="photo/demo/3.jpg" class="slider-gallery-item-prev-img" alt=""/>
                     </div>
-                    <p class="slider-item-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua.</p>
                 </li>
-                <li class="slider-item swiper-slide">
-                    <div class="slider-item-img-wrapper">
-                        <img src="photo/4.png" class="slider-item-img" alt=""/>
+                <li class="slider-gallery-item-prev swiper-slide">
+                    <div class="slider-gallery-item-prev-wrapper">
+                        <img src="photo/demo/4.png" class="slider-gallery-item-prev-img" alt=""/>
                     </div>
-                    <p class="slider-item-text">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
-                        ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit
-                        esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-                        sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                 </li>
-                <li class="slider-item swiper-slide">
-                    <div class="slider-item-img-wrapper">
-                        <img src="photo/5.jpg" class="slider-item-img" alt=""/>
+                <li class="slider-gallery-item-prev swiper-slide">
+                    <div class="slider-gallery-item-prev-wrapper">
+                        <img src="photo/demo/5.jpg" class="slider-gallery-item-prev-img" alt=""/>
                     </div>
-                    <p class="slider-item-text">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-                        officia deserunt mollit anim id est laborum.</p>
                 </li>
-                <li class="slider-item swiper-slide">
-                    <div class="slider-item-img-wrapper">
-                        <img src="photo/1.jpeg" class="slider-item-img" alt=""/>
+                <li class="slider-gallery-item-prev swiper-slide">
+                    <div class="slider-gallery-item-prev-wrapper">
+                        <img src="photo/demo/1.jpeg" class="slider-gallery-item-prev-img" alt=""/>
                     </div>
-                    <p class="slider-item-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                        exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-                        reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-                        occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-                        laborum.</p>
                 </li>
-                <li class="slider-item swiper-slide">
-                    <div class="slider-item-img-wrapper">
-                        <img src="photo/2.jpg" class="slider-item-img" alt=""/>
+                <li class="slider-gallery-item-prev swiper-slide">
+                    <div class="slider-gallery-item-prev-wrapper">
+                        <img src="photo/demo/2.jpg" class="slider-gallery-item-prev-img" alt=""/>
                     </div>
-                    <p class="slider-item-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua.</p>
                 </li>
             </ul>
         </div>
 
-        <footer class="slider__footer">
-            <!-- Add Pagination -->
-            <div class="slider-pagination swiper-pagination"></div>
+        <span class="slider-gallery-prev-next swiper-button-next"></span>
 
-            <section class="slider-footer__container">
+    </section>
+
+    <div class="slider-overlay" data-container="slider">
+        <div class="slider-wrapper">
+
+            <span class="slider-close close-container" data-containerid="slider"></span>
+
+            <!-- Add Arrows -->
+            <p class="slider-btn prev swiper-button-prev"></p>
+            <p class="slider-btn next swiper-button-next"></p>
+            <!-- end -->
+
+            <section class="slider-main">
+
                 <!-- Add Arrows -->
-                <div class="slider-btn prev swiper-button-prev"></div>
+                <span class="slider-btn prev swiper-button-prev"></span>
+                <span class="slider-btn next swiper-button-next"></span>
+                <!-- end -->
 
-                <div class="slider-gallery swiper-container gallery-thumbs">
-                    <ul class="slider-gallery-list swiper-wrapper">
-                        <li class="slider-gallery-item swiper-slide">
-                            <img src="photo/1.jpeg" class="slider-gallery-item-img" alt="" />
+                <div class="slider__container swiper-container">
+                    <ul class="slider-list swiper-wrapper">
+                        <li class="slider-item swiper-slide">
+                            <div class="slider-item-img-wrapper">
+                                <img src="photo/1.jpeg" class="slider-item-img" alt=""/>
+                            </div>
+                            <p class="slider-item-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                eiusmod
+                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                                exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+                                in
+                                reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+                                occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+                                laborum.</p>
                         </li>
-                        <li class="slider-gallery-item swiper-slide">
-                            <img src="photo/2.jpg" class="slider-gallery-item-img" alt="" />
+                        <li class="slider-item swiper-slide">
+                            <div class="slider-item-img-wrapper">
+                                <img src="photo/2.jpg" class="slider-item-img" alt=""/>
+                            </div>
+                            <p class="slider-item-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                eiusmod
+                                tempor incididunt ut labore et dolore magna aliqua.</p>
                         </li>
-                        <li class="slider-gallery-item swiper-slide">
-                            <img src="photo/3.jpg" class="slider-gallery-item-img" alt="" />
+                        <li class="slider-item swiper-slide">
+                            <div class="slider-item-img-wrapper">
+                                <img src="photo/3.jpg" class="slider-item-img" alt=""/>
+                            </div>
+                            <p class="slider-item-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                eiusmod
+                                tempor incididunt ut labore et dolore magna aliqua.</p>
                         </li>
-                        <li class="slider-gallery-item swiper-slide">
-                            <img src="photo/4.png" class="slider-gallery-item-img" alt="" />
+                        <li class="slider-item swiper-slide">
+                            <div class="slider-item-img-wrapper">
+                                <img src="photo/4.png" class="slider-item-img" alt=""/>
+                            </div>
+                            <p class="slider-item-text">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                                nisi
+                                ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+                                velit
+                                esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+                                sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                         </li>
-                        <li class="slider-gallery-item swiper-slide">
-                            <img src="photo/5.jpg" class="slider-gallery-item-img" alt="" />
+                        <li class="slider-item swiper-slide">
+                            <div class="slider-item-img-wrapper">
+                                <img src="photo/5.jpg" class="slider-item-img" alt=""/>
+                            </div>
+                            <p class="slider-item-text">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+                                officia deserunt mollit anim id est laborum.</p>
                         </li>
-                        <li class="slider-gallery-item swiper-slide">
-                            <img src="photo/1.jpeg" class="slider-gallery-item-img" alt="" />
+                        <li class="slider-item swiper-slide">
+                            <div class="slider-item-img-wrapper">
+                                <img src="photo/1.jpeg" class="slider-item-img" alt=""/>
+                            </div>
+                            <p class="slider-item-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                eiusmod
+                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                                exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+                                in
+                                reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+                                occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+                                laborum.</p>
                         </li>
-                        <li class="slider-gallery-item swiper-slide">
-                            <img src="photo/2.jpg" class="slider-gallery-item-img" alt="" />
+                        <li class="slider-item swiper-slide">
+                            <div class="slider-item-img-wrapper">
+                                <img src="photo/2.jpg" class="slider-item-img" alt=""/>
+                            </div>
+                            <p class="slider-item-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                eiusmod
+                                tempor incididunt ut labore et dolore magna aliqua.</p>
                         </li>
                     </ul>
                 </div>
 
-                <!-- Add Arrows -->
-                <div class="slider-btn next swiper-button-next"></div>
             </section>
 
-        </footer>
+            <footer class="slider__footer">
+                <!-- Add Pagination -->
+                <div class="slider-pagination swiper-pagination"></div>
 
+                <section class="slider-footer__container">
+
+                    <!-- Add Arrows -->
+                    <div class="slider-btn prev swiper-button-prev"></div>
+
+                    <div class="slider-gallery swiper-container gallery-thumbs">
+                        <ul class="slider-gallery-list swiper-wrapper">
+                            <li class="slider-gallery-item swiper-slide">
+                                <img src="photo/1.jpeg" class="slider-gallery-item-img" alt=""/>
+                            </li>
+                            <li class="slider-gallery-item swiper-slide">
+                                <img src="photo/2.jpg" class="slider-gallery-item-img" alt=""/>
+                            </li>
+                            <li class="slider-gallery-item swiper-slide">
+                                <img src="photo/3.jpg" class="slider-gallery-item-img" alt=""/>
+                            </li>
+                            <li class="slider-gallery-item swiper-slide">
+                                <img src="photo/4.png" class="slider-gallery-item-img" alt=""/>
+                            </li>
+                            <li class="slider-gallery-item swiper-slide">
+                                <img src="photo/5.jpg" class="slider-gallery-item-img" alt=""/>
+                            </li>
+                            <li class="slider-gallery-item swiper-slide">
+                                <img src="photo/1.jpeg" class="slider-gallery-item-img" alt=""/>
+                            </li>
+                            <li class="slider-gallery-item swiper-slide">
+                                <img src="photo/2.jpg" class="slider-gallery-item-img" alt=""/>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Add Arrows -->
+                    <div class="slider-btn next swiper-button-next"></div>
+
+                </section>
+
+            </footer>
+
+        </div>
     </div>
 </div>
 
