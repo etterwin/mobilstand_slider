@@ -47,6 +47,7 @@ span.slider-demo {
   height: 100vh;
   padding: 0 15px;
   background: rgba(0,0,0,.7);
+  box-sizing: border-box;
   left: 0;
   top: 0;
   z-index: 20;
@@ -71,9 +72,10 @@ span.slider-demo {
 .slider-wrapper {
   max-width: 1000px;
   width: 100%;
-  height: calc(100vh - 40px);
-  margin: 20px auto;
+  height: calc(100vh - 300px);
+  margin: 120px auto 50px;
   background: #FFFFFF;
+  box-sizing: border-box;
   padding: 70px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -374,6 +376,8 @@ span.slider-btn {
   width: 50%;
   height: 100%;
   top: 0;
+  transform: none !important;
+  border: 0 !important;
   &.prev {
     left: 0;
   }
@@ -416,8 +420,8 @@ p.slider-btn {
 }
 
 .slider-gallery-wrapper {
-  padding: 60px 48px 15px;
-  width: 46%;
+  padding: 60px 0 15px;
+  width: 100%;
   @media screen and (max-width: 1023px) {
     width: 100%;
   }
