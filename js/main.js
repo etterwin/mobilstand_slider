@@ -22,29 +22,31 @@ $(document).ready(function () {
         });
 
 
-    let slide_length = document.querySelectorAll('.slider-item').length;
-    if (slide_length > 1) {
-        $('.slider-gallery-wrapper').each(function () {
+    $('.slider-gallery-wrapper').each(function () {
+        let slide_length = $(this).find('.slider-overlay .slider__container .slider-list .slider-item').length;
+        console.log(slide_length);
+        if (slide_length > 1 && $(window).width() > 767) {
             let galleryTop = new Swiper($(this).find('.slider__container'), {
                 spaceBetween: 10,
                 pagination: $(this).find('.swiper-pagination'),
                 paginationType: 'fraction',
-                loop: true,
-                loopedSlides: $('.slider__container .swiper-wrapper .swiper-slide').length,
+                //loop: true,
+                //loopedSlides: $('.slider__container .swiper-wrapper .swiper-slide').length,
             });
 
             let galleryThumbs = new Swiper($(this).find('.slider-gallery'), {
                 spaceBetween: 10,
-                centeredSlides: '3',
+                centeredSlides: true,
                 slidesPerView: 'auto',
+                initialSlide: 3,
                 touchRatio: 0.2,
                 slideToClickedSlide: true,
                 keyboardControl: true,
                 loopAdditionalSlides: 1,
                 nextButton: $(this).find('.slider-btn.swiper-button-next'),
                 prevButton: $(this).find('.slider-btn.swiper-button-prev'),
-                loop: true,
-                loopedSlides: $('.slider__container .swiper-wrapper .swiper-slide').length,
+                //loop: true,
+                //loopedSlides: $('.slider__container .swiper-wrapper .swiper-slide').length,
             });
 
             galleryTop.params.control = galleryThumbs;
@@ -55,21 +57,75 @@ $(document).ready(function () {
                 centeredSlides: true,
                 slidesPerView: 'auto',
                 touchRatio: 0.2,
+                initialSlide: 3,
                 slideToClickedSlide: true,
                 keyboardControl: true,
                 loopAdditionalSlides: 1,
                 nextButton: $(this).find('.slider-gallery-prev-next.swiper-button-next'),
-                loop: true,
-                loopedSlides: $('.slider__container .swiper-wrapper .swiper-slide').length,
+                prevButton: $(this).find('.slider-gallery-prev-prev.swiper-button-prev'),
+                pagination: $(this).find('.slider-gallery-prev-pagination.swiper-pagination'),
+                paginationClickable: true,
+                //loop: true,
+                //loopedSlides: $('.slider__container .swiper-wrapper .swiper-slide').length,
             });
 
             galleryThumbsPrev.params.control = galleryThumbs;
             galleryThumbsPrev.params.control = galleryTop;
-        });
-    }
-    else {
-        $('.slider__footer').remove();
-    }
+
+        }
+        else if (slide_length > 1 && $(window).width() < 768) {
+            let galleryTop = new Swiper($(this).find('.slider__container'), {
+                spaceBetween: 10,
+                pagination: $(this).find('.slider-pagination.swiper-pagination'),
+                paginationType: 'fraction',
+                //loop: true,
+                //loopedSlides: $('.slider__container .swiper-wrapper .swiper-slide').length,
+            });
+
+            let galleryThumbs = new Swiper($(this).find('.slider-gallery'), {
+                spaceBetween: 10,
+                centeredSlides: true,
+                slidesPerView: 'auto',
+                initialSlide: 3,
+                touchRatio: 0.2,
+                slideToClickedSlide: true,
+                keyboardControl: true,
+                loopAdditionalSlides: 1,
+                nextButton: $(this).find('.slider-btn.swiper-button-next'),
+                prevButton: $(this).find('.slider-btn.swiper-button-prev'),
+                //loop: true,
+                //loopedSlides: $('.slider__container .swiper-wrapper .swiper-slide').length,
+            });
+
+            galleryTop.params.control = galleryThumbs;
+            galleryThumbs.params.control = galleryTop;
+
+
+            let galleryThumbsPrev = new Swiper($(this).find('.slider-gallery-prev'), {
+                centeredSlides: true,
+                slidesPerView: 'auto',
+                touchRatio: 0.2,
+                initialSlide: 0,
+                slideToClickedSlide: true,
+                keyboardControl: true,
+                loopAdditionalSlides: 1,
+                pagination: $(this).find('.slider-gallery-prev-pagination.swiper-pagination'),
+                paginationClickable: true,
+                //loop: true,
+                //loopedSlides: $('.slider__container .swiper-wrapper .swiper-slide').length,
+            });
+
+            galleryThumbsPrev.params.control = galleryThumbs;
+            galleryThumbsPrev.params.control = galleryTop;
+        }
+        else {
+            $('.slider__footer').remove();
+            $(this).find('.slider-gallery-prev-next.swiper-button-next').remove();
+            $(this).find('.slider-gallery-prev-prev.swiper-button-prev').remove();
+            $(this).find('.slider-btn').remove();
+        }
+    });
+
 
     // Запрет на скролл окна
     let keys = {37: 1, 38: 1, 39: 1, 40: 1};
