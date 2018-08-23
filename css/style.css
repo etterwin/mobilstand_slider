@@ -99,7 +99,7 @@ span.slider-demo {
   .slider-wrapper .slider__container {
     position: relative;
     width: 100%;
-    height: calc(100% - 90px) !important; }
+    height: 100% !important; }
     @media screen and (max-width: 767px) {
       .slider-wrapper .slider__container {
         margin-bottom: 15px; } }
@@ -255,6 +255,7 @@ span.slider-demo {
       background-size: cover;
       position: relative;
       overflow: hidden;
+      cursor: pointer;
       box-sizing: border-box; }
       @media screen and (max-width: 767px) {
         .slider-gallery .slider-gallery-list .slider-gallery-item {

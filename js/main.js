@@ -25,98 +25,115 @@ $(document).ready(function () {
     $('.slider-gallery-wrapper').each(function () {
         let slide_length = $(this).find('.slider-overlay .slider__container .slider-list .slider-item').length;
         console.log(slide_length);
-        if (slide_length > 1 && $(window).width() > 767) {
+        if (slide_length > 1) {
             let galleryTop = new Swiper($(this).find('.slider__container'), {
                 spaceBetween: 10,
                 pagination: $(this).find('.swiper-pagination'),
                 paginationType: 'fraction',
-                //loop: true,
-                //loopedSlides: $('.slider__container .swiper-wrapper .swiper-slide').length,
+                nextButton: $(this).find('.main.slider-btn.swiper-button-next'),
+                prevButton: $(this).find('.main.slider-btn.swiper-button-prev'),
             });
 
             let galleryThumbs = new Swiper($(this).find('.slider-gallery'), {
                 spaceBetween: 10,
-                centeredSlides: true,
+                centeredSlides: false,
+                freeMode: true,
                 slidesPerView: 'auto',
-                initialSlide: 3,
                 touchRatio: 0.2,
                 slideToClickedSlide: true,
                 keyboardControl: true,
                 loopAdditionalSlides: 1,
-                nextButton: $(this).find('.slider-btn.swiper-button-next'),
-                prevButton: $(this).find('.slider-btn.swiper-button-prev'),
-                //loop: true,
-                //loopedSlides: $('.slider__container .swiper-wrapper .swiper-slide').length,
+                nextButton: $(this).find('div.slider-btn.swiper-button-next'),
+                prevButton: $(this).find('div.slider-btn.swiper-button-prev'),
+                onClick: function (swiper, event){
+                    let clicked = swiper.clickedIndex;
+                    swiper.activeIndex = clicked;
+                    swiper.updateClasses();
+                    $(swiper.slides).removeClass('is-selected');
+                    $(swiper.clickedSlide).addClass('is-selected');
+                    galleryTop.slideTo(clicked,500, false);
+                }
             });
-
-            galleryTop.params.control = galleryThumbs;
-            galleryThumbs.params.control = galleryTop;
 
 
             let galleryThumbsPrev = new Swiper($(this).find('.slider-gallery-prev'), {
-                centeredSlides: true,
+                centeredSlides: false,
                 slidesPerView: 'auto',
+                freeMode: true,
                 touchRatio: 0.2,
-                initialSlide: 3,
                 slideToClickedSlide: true,
                 keyboardControl: true,
-                loopAdditionalSlides: 1,
                 nextButton: $(this).find('.slider-gallery-prev-next.swiper-button-next'),
                 prevButton: $(this).find('.slider-gallery-prev-prev.swiper-button-prev'),
                 pagination: $(this).find('.slider-gallery-prev-pagination.swiper-pagination'),
                 paginationClickable: true,
-                //loop: true,
-                //loopedSlides: $('.slider__container .swiper-wrapper .swiper-slide').length,
+                onClick: function (swiper, event){
+                    let clicked = swiper.clickedIndex;
+                    swiper.activeIndex = clicked;
+                    swiper.updateClasses();
+                    $(swiper.slides).removeClass('is-selected');
+                    $(swiper.clickedSlide).addClass('is-selected');
+                    galleryTop.slideTo(clicked,500, false);
+                }
             });
 
             galleryThumbsPrev.params.control = galleryThumbs;
             galleryThumbsPrev.params.control = galleryTop;
 
-        }
-        else if (slide_length > 1 && $(window).width() < 768) {
-            let galleryTop = new Swiper($(this).find('.slider__container'), {
+            /*let galleryTop = new Swiper($(this).find('.slider__container'), {
                 spaceBetween: 10,
-                pagination: $(this).find('.slider-pagination.swiper-pagination'),
+                pagination: $(this).find('.swiper-pagination'),
                 paginationType: 'fraction',
-                //loop: true,
-                //loopedSlides: $('.slider__container .swiper-wrapper .swiper-slide').length,
+                nextButton: $(this).find('.main.slider-btn.swiper-button-next'),
+                prevButton: $(this).find('.main.slider-btn.swiper-button-prev'),
             });
 
             let galleryThumbs = new Swiper($(this).find('.slider-gallery'), {
                 spaceBetween: 10,
-                centeredSlides: true,
+                centeredSlides: false,
+                freeMode: true,
                 slidesPerView: 'auto',
-                initialSlide: 3,
                 touchRatio: 0.2,
                 slideToClickedSlide: true,
                 keyboardControl: true,
                 loopAdditionalSlides: 1,
-                nextButton: $(this).find('.slider-btn.swiper-button-next'),
-                prevButton: $(this).find('.slider-btn.swiper-button-prev'),
-                //loop: true,
-                //loopedSlides: $('.slider__container .swiper-wrapper .swiper-slide').length,
+                nextButton: $(this).find('div.slider-btn.swiper-button-next'),
+                prevButton: $(this).find('div.slider-btn.swiper-button-prev'),
+                onClick: function (swiper, event){
+                    let clicked = swiper.clickedIndex;
+                    swiper.activeIndex = clicked;
+                    swiper.updateClasses();
+                    $(swiper.slides).removeClass('is-selected');
+                    $(swiper.clickedSlide).addClass('is-selected');
+                    galleryTop.slideTo(clicked,500, false);
+                }
             });
-
-            galleryTop.params.control = galleryThumbs;
-            galleryThumbs.params.control = galleryTop;
 
 
             let galleryThumbsPrev = new Swiper($(this).find('.slider-gallery-prev'), {
-                centeredSlides: true,
+                centeredSlides: false,
                 slidesPerView: 'auto',
+                freeMode: true,
                 touchRatio: 0.2,
-                initialSlide: 0,
                 slideToClickedSlide: true,
                 keyboardControl: true,
-                loopAdditionalSlides: 1,
+                nextButton: $(this).find('.slider-gallery-prev-next.swiper-button-next'),
+                prevButton: $(this).find('.slider-gallery-prev-prev.swiper-button-prev'),
                 pagination: $(this).find('.slider-gallery-prev-pagination.swiper-pagination'),
                 paginationClickable: true,
-                //loop: true,
-                //loopedSlides: $('.slider__container .swiper-wrapper .swiper-slide').length,
+                onClick: function (swiper, event){
+                    let clicked = swiper.clickedIndex;
+                    swiper.activeIndex = clicked;
+                    swiper.updateClasses();
+                    $(swiper.slides).removeClass('is-selected');
+                    $(swiper.clickedSlide).addClass('is-selected');
+                    galleryTop.slideTo(clicked,500, false);
+                }
             });
 
             galleryThumbsPrev.params.control = galleryThumbs;
-            galleryThumbsPrev.params.control = galleryTop;
+            galleryThumbsPrev.params.control = galleryTop;*/
+
         }
         else {
             $('.slider__footer').remove();
