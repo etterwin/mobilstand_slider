@@ -11,7 +11,9 @@ $(document).ready(function () {
         })
         .mouseup(function (e) {
             let popup = $('.slider-wrapper');
-            if (!popup.is(e.target) && popup.has(e.target).length === 0) {
+            let btn = $('.main');
+            if (!popup.is(e.target) && popup.has(e.target).length === 0 &&
+                !btn.is(e.target) && btn.has(e.target).length === 0) {
                 $(popup).closest('.slider-overlay').removeClass('active');
                 enableScroll();
             }
@@ -20,6 +22,7 @@ $(document).ready(function () {
             $(this).closest('.slider-gallery-prev-wrapper').siblings('.slider-overlay').addClass('active');
             disableScroll();
         });
+
 
 
     $('.slider-gallery-wrapper').each(function () {
@@ -36,8 +39,7 @@ $(document).ready(function () {
 
             let galleryThumbs = new Swiper($(this).find('.slider-gallery'), {
                 spaceBetween: 10,
-                centeredSlides: false,
-                freeMode: true,
+                centeredSlides: true,
                 slidesPerView: 'auto',
                 touchRatio: 0.2,
                 slideToClickedSlide: true,
@@ -45,15 +47,10 @@ $(document).ready(function () {
                 loopAdditionalSlides: 1,
                 nextButton: $(this).find('div.slider-btn.swiper-button-next'),
                 prevButton: $(this).find('div.slider-btn.swiper-button-prev'),
-                onClick: function (swiper, event){
-                    let clicked = swiper.clickedIndex;
-                    swiper.activeIndex = clicked;
-                    swiper.updateClasses();
-                    $(swiper.slides).removeClass('is-selected');
-                    $(swiper.clickedSlide).addClass('is-selected');
-                    galleryTop.slideTo(clicked,500, false);
-                }
             });
+
+            galleryTop.params.control = galleryThumbs;
+            galleryThumbs.params.control = galleryTop;
 
 
             let galleryThumbsPrev = new Swiper($(this).find('.slider-gallery-prev'), {
@@ -66,6 +63,7 @@ $(document).ready(function () {
                 nextButton: $(this).find('.slider-gallery-prev-next.swiper-button-next'),
                 prevButton: $(this).find('.slider-gallery-prev-prev.swiper-button-prev'),
                 pagination: $(this).find('.slider-gallery-prev-pagination.swiper-pagination'),
+                paginationType: 'fraction',
                 paginationClickable: true,
                 onClick: function (swiper, event){
                     let clicked = swiper.clickedIndex;

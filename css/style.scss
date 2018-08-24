@@ -71,16 +71,17 @@ span.slider-demo {
   @media screen and (max-width: 570px) {
     padding: 0;
   }
+  @media screen and (max-height: 414px){
+    display: none;
+  }
 }
 
 .slider-wrapper {
-  max-width: 1000px;
   width: 100%;
-  height: calc(100vh - 180px);
-  margin: auto auto 50px;
+  margin: auto;
   background: #FFFFFF;
   box-sizing: border-box;
-  padding: 70px;
+  padding: 70px 70px 20px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -98,6 +99,13 @@ span.slider-demo {
   -ms-transition: all .3s ease-in-out;
   -o-transition: all .3s ease-in-out;
   transition: all .3s ease-in-out;
+  @media screen and (min-width: 1280px) {
+    max-width: 1100px;
+    height: 780px;
+  }
+  @media screen and (max-width: 1279px) {
+    max-width: 1000px;
+  }
   @media screen and (max-width: 767px) {
     height: 100vh;
     padding: 50px 15px 40px;
@@ -189,6 +197,7 @@ span.slider-demo {
     -ms-flex-direction: column;
     flex-direction: column;
     width: 100%;
+    margin-top: auto;
     height: 100%;
     background: #FFFFFF;
     .slider-item-img-wrapper {
@@ -206,9 +215,11 @@ span.slider-demo {
         width: auto;
         height: auto;
         max-width: 100%;
-        max-height: 100%;
+        max-height: 630px;
         margin: auto auto 0 auto;
-
+        @media screen and (max-width: 767px) {
+          margin: auto !important;
+        }
       }
     }
     .slider-item-text {
@@ -217,7 +228,8 @@ span.slider-demo {
       line-height: 1.6;
       color: rgb(50,50,50);
       font-size: 14px;
-      margin-top: 20px;
+      margin-top: 10px;
+      margin-bottom: 0 !important;
     }
   }
 }
@@ -374,12 +386,23 @@ div.slider-btn {
 .slider-main {
   position: relative;
   width: 100%;
-  height: calc(100% - 90px) !important;
+  @media screen and (min-height: 992px) {
+    height: calc(100% - 70px) !important;
+  }
+  @media screen and (height: 768px) {
+    height: 550px !important;
+  }
+  @media screen and (min-height: 769px) and (max-height: 991px) {
+    height: 600px !important;
+  }
+  @media screen and (max-height: 767px) {
+    height: calc(100% - 70px) !important;
+  }
 }
 
 span.slider-btn {
   position: absolute;
-  width: 50%;
+  width: 25%;
   height: 100%;
   top: 0;
   transform: none !important;
@@ -397,28 +420,44 @@ span.slider-btn {
 
 p.slider-btn {
   position: absolute;
-  width: 28px;
-  height: 28px;
+  width: 48px;
+  height: 48px;
   top: calc(50% - 14px);
   &.prev {
-    border-bottom: 2px solid #2f99fd;
-    border-left: 2px solid #2f99fd;
     -webkit-transform: rotate(45deg);
     -moz-transform: rotate(45deg);
     -ms-transform: rotate(45deg);
     -o-transform: rotate(45deg);
     transform: rotate(45deg);
-    left: -10%;
+    left: 30px;
+    &:before {
+      position: absolute;
+      content: '';
+      width: 28px;
+      height: 28px;
+      top: 10px;
+      left: 10px;
+      border-bottom: 2px solid rgba(255,255,255,.8);
+      border-left: 2px solid rgba(255,255,255,.8);
+    }
   }
   &.next {
-    border-top: 2px solid #2f99fd;
-    border-right: 2px solid #2f99fd;
     -webkit-transform: rotate(45deg);
     -moz-transform: rotate(45deg);
     -ms-transform: rotate(45deg);
     -o-transform: rotate(45deg);
     transform: rotate(45deg);
-    right: -10%;
+    right: 30px;
+    &:before {
+      position: absolute;
+      content: '';
+      width: 28px;
+      height: 28px;
+      top: 10px;
+      left: 10px;
+      border-top: 2px solid rgba(255,255,255,.8);
+      border-right: 2px solid rgba(255,255,255,.8);
+    }
   }
   @media screen and (max-width: 1023px) {
     display: none;
@@ -558,6 +597,8 @@ p.slider-btn {
       max-height: 120px;
       margin-right: 35px;
       cursor: pointer;
+      position: relative;
+      overflow: hidden;
       @media screen and (min-width: 1280px) and (max-width: 1440px){
         max-width: 110px;
         max-height: 110px;
@@ -576,6 +617,13 @@ p.slider-btn {
         max-width: 767px;
         max-height: 767px;
         margin-right: auto;
+      }
+      @media screen and (max-height: 1279px) {
+        max-height: 150px;
+        max-width: 150px;
+      }
+      @media screen and (min-height: 768px) and (max-height: 991px) and (min-width: 992px) and (max-width: 1279px){
+        margin-right: 0 !important;
       }
       .slider-gallery-item-prev-wrapper {
         width: 120px;
