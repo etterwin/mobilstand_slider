@@ -796,6 +796,31 @@ p.slider-btn {
   pointer-events: none;
   visibility: hidden;
   opacity: 0;
+  &:before {
+    position: fixed;
+    content: '';
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0,0,0,.4);
+  }
+}
+
+@-webkit-keyframes fadeText {
+  from {
+    opacity: 1;
+    visibility: visible;
+  }
+  60% {
+    opacity: 1;
+    visibility: visible;
+  }
+  to {
+    opacity: 0;
+    visibility: visible;
+  }
 }
 
 @keyframes fadeText {

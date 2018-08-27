@@ -49,7 +49,6 @@ $(document).ready(function () {
 
     $('.slider-gallery-wrapper').each(function () {
         let slide_length = $(this).find('.slider-overlay .slider__container .slider-list .slider-item').length;
-
         if (slide_length > 1) {
 
             let galleryZoom = new Swiper($(this).find('.slider-zoom__container'), {
@@ -67,9 +66,6 @@ $(document).ready(function () {
                 paginationType: 'fraction',
                 nextButton: $(this).find('.main.slider-btn.swiper-button-next'),
                 prevButton: $(this).find('.main.slider-btn.swiper-button-prev'),
-                /*onSlideChangeStart: function(){
-                    galleryZoom.slideTo(galleryTop.activeIndex);
-                }*/
                 onClick: function (swiper, event) {
                     let clicked = swiper.clickedIndex;
                     swiper.activeIndex = clicked;
