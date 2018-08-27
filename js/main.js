@@ -1,40 +1,83 @@
 $(document).ready(function () {
 
+    function sizeImg() {
+        $('.slider-item-img-wrapper').each(function () {
+            if ($(this).height() < $(this).find('.slider-item-img').height()) {
+                $(this).find('.slider-item-img').height($(this).height())
+            }
+        })
+    }
+
+    sizeImg();
+
+    $(window).resize(function () {
+        sizeImg();
+    });
+
     $(document)
         .on('click', '.close-container', function () {
             $('[data-container = ' + $(this).data('containerid') + ']').removeClass('active');
             enableScroll();
+            $('.zoomContainer').removeClass('active');
         })
         .on('click', '.open-container', function () {
             $('[data-container = ' + $(this).data('containerid') + ']').addClass('active');
             disableScroll();
+            $('.zoomContainer').addClass('active');
         })
         .mouseup(function (e) {
             let popup = $('.slider-wrapper');
             let btn = $('.main');
+            let galleryZoom = $('.slider-zoom__container');
             if (!popup.is(e.target) && popup.has(e.target).length === 0 &&
-                !btn.is(e.target) && btn.has(e.target).length === 0) {
+                !btn.is(e.target) && btn.has(e.target).length === 0 &&
+                !galleryZoom.is(e.target) && galleryZoom.has(e.target).length === 0) {
                 $(popup).closest('.slider-overlay').removeClass('active');
                 enableScroll();
+                $('*').removeClass('active');
+                $('.zoomContainer').removeClass('active');
             }
         })
         .on('click', '.slider-gallery-item-prev', function () {
             $(this).closest('.slider-gallery-prev-wrapper').siblings('.slider-overlay').addClass('active');
             disableScroll();
+            $('.zoomContainer').addClass('active');
+        })
+        .on('click', '.slider-item-img', function () {
+            $(this).closest('.slider-gallery-wrapper').find('.slider-zoom__container').addClass('active');
         });
-
-
 
     $('.slider-gallery-wrapper').each(function () {
         let slide_length = $(this).find('.slider-overlay .slider__container .slider-list .slider-item').length;
-        console.log(slide_length);
+
         if (slide_length > 1) {
+
+            let galleryZoom = new Swiper($(this).find('.slider-zoom__container'), {
+                keyboardControl: true,
+                zoom: true,
+                centeredSlides: true,
+                slidesPerView: 'auto',
+                nextButton: $(this).find('p.main.slider-btn.swiper-button-next'),
+                prevButton: $(this).find('p.main.slider-btn.swiper-button-prev'),
+            });
+
             let galleryTop = new Swiper($(this).find('.slider__container'), {
                 spaceBetween: 10,
                 pagination: $(this).find('.swiper-pagination'),
                 paginationType: 'fraction',
                 nextButton: $(this).find('.main.slider-btn.swiper-button-next'),
                 prevButton: $(this).find('.main.slider-btn.swiper-button-prev'),
+                /*onSlideChangeStart: function(){
+                    galleryZoom.slideTo(galleryTop.activeIndex);
+                }*/
+                onClick: function (swiper, event) {
+                    let clicked = swiper.clickedIndex;
+                    swiper.activeIndex = clicked;
+                    swiper.updateClasses();
+                    $(swiper.slides).removeClass('is-selected');
+                    $(swiper.clickedSlide).addClass('is-selected');
+                    galleryZoom.slideTo(clicked, 500, false);
+                }
             });
 
             let galleryThumbs = new Swiper($(this).find('.slider-gallery'), {
@@ -52,6 +95,8 @@ $(document).ready(function () {
             galleryTop.params.control = galleryThumbs;
             galleryThumbs.params.control = galleryTop;
 
+            galleryThumbs.controller.control = galleryZoom;
+            galleryZoom.controller.control = galleryThumbs;
 
             let galleryThumbsPrev = new Swiper($(this).find('.slider-gallery-prev'), {
                 centeredSlides: false,
@@ -65,73 +110,18 @@ $(document).ready(function () {
                 pagination: $(this).find('.slider-gallery-prev-pagination.swiper-pagination'),
                 paginationType: 'fraction',
                 paginationClickable: true,
-                onClick: function (swiper, event){
+                onClick: function (swiper, event) {
                     let clicked = swiper.clickedIndex;
                     swiper.activeIndex = clicked;
                     swiper.updateClasses();
                     $(swiper.slides).removeClass('is-selected');
                     $(swiper.clickedSlide).addClass('is-selected');
-                    galleryTop.slideTo(clicked,500, false);
+                    galleryTop.slideTo(clicked, 500, false);
                 }
             });
 
             galleryThumbsPrev.params.control = galleryThumbs;
             galleryThumbsPrev.params.control = galleryTop;
-
-            /*let galleryTop = new Swiper($(this).find('.slider__container'), {
-                spaceBetween: 10,
-                pagination: $(this).find('.swiper-pagination'),
-                paginationType: 'fraction',
-                nextButton: $(this).find('.main.slider-btn.swiper-button-next'),
-                prevButton: $(this).find('.main.slider-btn.swiper-button-prev'),
-            });
-
-            let galleryThumbs = new Swiper($(this).find('.slider-gallery'), {
-                spaceBetween: 10,
-                centeredSlides: false,
-                freeMode: true,
-                slidesPerView: 'auto',
-                touchRatio: 0.2,
-                slideToClickedSlide: true,
-                keyboardControl: true,
-                loopAdditionalSlides: 1,
-                nextButton: $(this).find('div.slider-btn.swiper-button-next'),
-                prevButton: $(this).find('div.slider-btn.swiper-button-prev'),
-                onClick: function (swiper, event){
-                    let clicked = swiper.clickedIndex;
-                    swiper.activeIndex = clicked;
-                    swiper.updateClasses();
-                    $(swiper.slides).removeClass('is-selected');
-                    $(swiper.clickedSlide).addClass('is-selected');
-                    galleryTop.slideTo(clicked,500, false);
-                }
-            });
-
-
-            let galleryThumbsPrev = new Swiper($(this).find('.slider-gallery-prev'), {
-                centeredSlides: false,
-                slidesPerView: 'auto',
-                freeMode: true,
-                touchRatio: 0.2,
-                slideToClickedSlide: true,
-                keyboardControl: true,
-                nextButton: $(this).find('.slider-gallery-prev-next.swiper-button-next'),
-                prevButton: $(this).find('.slider-gallery-prev-prev.swiper-button-prev'),
-                pagination: $(this).find('.slider-gallery-prev-pagination.swiper-pagination'),
-                paginationClickable: true,
-                onClick: function (swiper, event){
-                    let clicked = swiper.clickedIndex;
-                    swiper.activeIndex = clicked;
-                    swiper.updateClasses();
-                    $(swiper.slides).removeClass('is-selected');
-                    $(swiper.clickedSlide).addClass('is-selected');
-                    galleryTop.slideTo(clicked,500, false);
-                }
-            });
-
-            galleryThumbsPrev.params.control = galleryThumbs;
-            galleryThumbsPrev.params.control = galleryTop;*/
-
         }
         else {
             $('.slider__footer').remove();

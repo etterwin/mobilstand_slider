@@ -82,6 +82,7 @@
 
     </section>
 
+
     <div class="slider-overlay" data-container="slider">
 
         <!-- Add Arrows -->
@@ -89,10 +90,72 @@
         <p class="slider-btn main next swiper-button-next"></p>
         <!-- end -->
 
+        <!-- zoom slider -->
+        <section class="slider-scale slider-zoom__container swiper-container" data-container="zoom">
+            <ul class="slider-zoom-list swiper-wrapper">
+                <li class="slider-zoom-item swiper-slide">
+                    <div class="swiper-zoom-container">
+                        <img src="photo/1.jpeg" class="slider-zoom-img" alt="" />
+                    </div>
+                </li>
+                <li class="slider-zoom-item swiper-slide">
+                    <div class="swiper-zoom-container">
+                        <img src="photo/2.jpg" class="slider-zoom-img" alt="" />
+                    </div>
+                </li>
+                <li class="slider-zoom-item swiper-slide">
+                    <div class="swiper-zoom-container">
+                        <img src="photo/3.jpg" class="slider-zoom-img" alt="" />
+                    </div>
+                </li>
+                <li class="slider-zoom-item swiper-slide">
+                    <div class="swiper-zoom-container">
+                        <img src="photo/4.png" class="slider-zoom-img" alt="" />
+                    </div>
+                </li>
+                <li class="slider-zoom-item swiper-slide">
+                    <div class="swiper-zoom-container">
+                        <img src="photo/5.jpg" class="slider-zoom-img" alt="" />
+                    </div>
+                </li>
+                <li class="slider-zoom-item swiper-slide">
+                    <div class="swiper-zoom-container">
+                        <img src="photo/1.jpeg" class="slider-zoom-img" alt="" />
+                    </div>
+                </li>
+                <li class="slider-zoom-item swiper-slide">
+                    <div class="swiper-zoom-container">
+                        <img src="photo/2.jpg" class="slider-zoom-img" alt="" />
+                    </div>
+                </li>
+                <li class="slider-zoom-item swiper-slide">
+                    <div class="swiper-zoom-container">
+                        <img src="photo/3.jpg" class="slider-zoom-img" alt="" />
+                    </div>
+                </li>
+                <li class="slider-zoom-item swiper-slide">
+                    <div class="swiper-zoom-container">
+                        <img src="photo/4.png" class="slider-zoom-img" alt="" />
+                    </div>
+                </li>
+                <li class="slider-zoom-item swiper-slide">
+                    <div class="swiper-zoom-container">
+                        <img src="photo/5.jpg" class="slider-zoom-img" alt="" />
+                    </div>
+                </li>
+            </ul>
+        </section>
+        <!-- end -->
+
+        <!-- close zoom slider -->
+        <span class="slider-zoom-close close-container" data-containerid="zoom"></span>
+        <!-- end -->
+
+        <h3 class="slider-zoom-text">Чтобы увеличить изображение, кликните 2 раза</h3>
+
         <div class="slider-wrapper">
 
             <span class="slider-close close-container" data-containerid="slider"></span>
-
 
             <section class="slider-main">
 
@@ -101,11 +164,11 @@
                 <span class="slider-btn main next swiper-button-next"></span>
                 <!-- end -->
 
-                <div class="slider__container swiper-container">
+                <div class="slider-scale slider__container swiper-container">
                     <ul class="slider-list swiper-wrapper">
                         <li class="slider-item swiper-slide">
                             <div class="slider-item-img-wrapper">
-                                <img src="photo/1.jpeg" class="slider-item-img" alt=""/>
+                                <img src="photo/1.jpeg" class="slider-item-img" data-zoom-image="photo/1.jpeg" alt=""/>
                             </div>
                             <p class="slider-item-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                                 eiusmod
@@ -118,7 +181,7 @@
                         </li>
                         <li class="slider-item swiper-slide">
                             <div class="slider-item-img-wrapper">
-                                <img src="photo/2.jpg" class="slider-item-img" alt=""/>
+                                <img src="photo/2.jpg" class="slider-item-img" data-zoom-image="photo/2.jpg" alt=""/>
                             </div>
                             <p class="slider-item-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                                 eiusmod
@@ -126,7 +189,7 @@
                         </li>
                         <li class="slider-item swiper-slide">
                             <div class="slider-item-img-wrapper">
-                                <img src="photo/3.jpg" class="slider-item-img" alt=""/>
+                                <img src="photo/3.jpg" class="slider-item-img" data-zoom-image="photo/3.jpg" alt=""/>
                             </div>
                             <p class="slider-item-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                                 eiusmod
@@ -134,7 +197,7 @@
                         </li>
                         <li class="slider-item swiper-slide">
                             <div class="slider-item-img-wrapper">
-                                <img src="photo/4.png" class="slider-item-img" alt=""/>
+                                <img src="photo/4.png" class="slider-item-img" data-zoom-image="photo/4.png" alt=""/>
                             </div>
                             <p class="slider-item-text">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
                                 nisi
@@ -145,14 +208,14 @@
                         </li>
                         <li class="slider-item swiper-slide">
                             <div class="slider-item-img-wrapper">
-                                <img src="photo/5.jpg" class="slider-item-img" alt=""/>
+                                <img src="photo/5.jpg" class="slider-item-img" data-zoom-image="photo/5.jpg"  alt=""/>
                             </div>
                             <p class="slider-item-text">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
                                 officia deserunt mollit anim id est laborum.</p>
                         </li>
                         <li class="slider-item swiper-slide">
                             <div class="slider-item-img-wrapper">
-                                <img src="photo/1.jpeg" class="slider-item-img" alt=""/>
+                                <img src="photo/1.jpeg" class="slider-item-img" data-zoom-image="photo/1.jpeg" alt=""/>
                             </div>
                             <p class="slider-item-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                                 eiusmod
@@ -165,7 +228,7 @@
                         </li>
                         <li class="slider-item swiper-slide">
                             <div class="slider-item-img-wrapper">
-                                <img src="photo/2.jpg" class="slider-item-img" alt=""/>
+                                <img src="photo/2.jpg" class="slider-item-img" data-zoom-image="photo/2.jpg" alt=""/>
                             </div>
                             <p class="slider-item-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                                 eiusmod
@@ -173,7 +236,7 @@
                         </li>
                         <li class="slider-item swiper-slide">
                             <div class="slider-item-img-wrapper">
-                                <img src="photo/3.jpg" class="slider-item-img" alt=""/>
+                                <img src="photo/3.jpg" class="slider-item-img" data-zoom-image="photo/3.jpg" alt=""/>
                             </div>
                             <p class="slider-item-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                                 eiusmod
@@ -181,7 +244,7 @@
                         </li>
                         <li class="slider-item swiper-slide">
                             <div class="slider-item-img-wrapper">
-                                <img src="photo/4.png" class="slider-item-img" alt=""/>
+                                <img src="photo/4.png" class="slider-item-img" data-zoom-image="photo/4.png" alt=""/>
                             </div>
                             <p class="slider-item-text">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
                                 nisi
@@ -192,7 +255,7 @@
                         </li>
                         <li class="slider-item swiper-slide">
                             <div class="slider-item-img-wrapper">
-                                <img src="photo/5.jpg" class="slider-item-img" alt=""/>
+                                <img src="photo/5.jpg" class="slider-item-img" data-zoom-image="photo/5.jpg"  alt=""/>
                             </div>
                             <p class="slider-item-text">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
                                 officia deserunt mollit anim id est laborum.</p>
