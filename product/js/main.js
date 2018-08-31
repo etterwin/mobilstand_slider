@@ -11,6 +11,7 @@ $(document).ready(function () {
         paginationClickable: true,
         autoplay: true,
         speed: 1000,
+        autoplayDisableOnInteraction: false,
     });
 
 });
