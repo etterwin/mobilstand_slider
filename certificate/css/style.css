@@ -47,3 +47,108 @@
 .certificate-pagination .swiper-pagination-current {
     color: #0064ac;
 }
+
+.certificate-overlay {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0,0,0,.4);
+    -webkit-transition: all .2s ease-in-out;
+    -moz-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+    left: 0;
+    top: 0;
+    pointer-events: none;
+    visibility: hidden;
+    opacity: 0;
+    z-index: 5;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.certificate-overlay.active {
+    pointer-events: all;
+    visibility: visible;
+    opacity: 1;
+}
+
+.certificate__subcontainer {
+    max-width: 600px;
+    width: 100%;
+    margin: auto;
+}
+.certificate-subitem {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.certificate-subitem-wrapper {
+    width: 100%;
+    display: block;
+    margin: auto;
+    padding: 70px;
+    background: white;
+    position: relative;
+}
+
+.certificate-subitem-wrapper img {
+    width: 100%;
+}
+
+.certificate-subitem-caption {
+    font-family: Roboto, sans-serif;
+    font-weight: 700;
+    margin-bottom: 12px;
+    margin-top: 21px;
+}
+
+.certificate-subitem-pagination {
+    font-family: Roboto, sans-serif;
+    font-size: 14px;
+    margin: 0 10px;
+    color: #afafaf;
+}
+.certificate-subitem-pagination .swiper-pagination-current {
+      color: #0064ac;
+}
+
+.certificate-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 29px;
+    height: 29px;
+    background: url(../img/pp_close.png) center no-repeat;
+    cursor: pointer;
+}
+
+.certificate-subbtn {
+    position: absolute;
+    width: 48px;
+    height: 48px;
+    top: calc(50% - 24px);
+    opacity: .7;
+}
+.certificate-subbtn.prev {
+    background: url("../img/l_arr.png") center no-repeat;
+    cursor: pointer;
+    left: 25px;
+}
+.certificate-subbtn.next {
+    background: url("../img/r_arr.png") center no-repeat;
+    cursor: pointer;
+    right: 25px;
+}
+
+@media screen and (max-width: 767px) {
+    .certificate-subbtn {
+        display: none;
+    }
+    .certificate-subitem-pagination,
+    .certificate-pagination {
+        font-size: 12px;
+    }
+}
