@@ -1,0 +1,93 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    outline: none;
+}
+
+.pdf-list {
+    list-style: none;
+}
+
+.pdf-item {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+.pdf-item-link {
+    width: 50%;
+}
+
+.pdf-item-link {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    text-decoration: none;
+    color: rgb(0, 100, 172);
+    margin-bottom: 10px;
+}
+
+.pdf-item-link:hover {
+    text-decoration: underline;
+}
+
+.pdf-item-icon {
+    background: url('../img/pdf_ico.png') center no-repeat;
+    width: 20px;
+    height: 26px;
+    margin-right: 9px;
+    display: block;
+}
+
+.pdf-item-text {
+    font-family: Roboto, sans-serif;
+    font-size: 12px;
+    cursor: pointer;
+    color: rgb(0, 100, 172);
+    width: calc(100% - 29px);
+}
+
+.pdf__footer {
+    position: relative;
+    display: inline-block;
+    margin-left: 20px;
+}
+
+.pdf-pagination {
+    font-family: Roboto, sans-serif;
+    color: #afafaf;
+    font-size: 11px;
+}
+
+.pdf-pagination .swiper-pagination-current {
+    color: #0064ac;
+}
+
+.pdf-btn {
+    position: absolute;
+    width: 48px;
+    height: 48px;
+    top: calc(50% - 24px);
+    opacity: .7;
+}
+.pdf-btn.prev {
+    background: url("../img/l_arr_b.png") center no-repeat;
+    cursor: pointer;
+    left: -40px;
+}
+.pdf-btn.next {
+    background: url("../img/r_arr_b.png") center no-repeat;
+    cursor: pointer;
+    right: -40px;
+}
