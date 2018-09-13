@@ -83,6 +83,7 @@
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    position: relative;
 }
 
 .certificate-subitem-wrapper {
@@ -152,3 +153,18 @@
         font-size: 12px;
     }
 }
+
+span.slider-btn {
+    position: absolute;
+    width: 25%;
+    height: 100%;
+    top: 0;
+    transform: none !important;
+    border: 0 !important; }
+span.slider-btn.prev {
+    left: 0; }
+span.slider-btn.next {
+    right: 0; }
+@media screen and (max-width: 767px) {
+    span.slider-btn {
+        display: none; } }

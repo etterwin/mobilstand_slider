@@ -3,8 +3,8 @@ $(document).ready(function () {
     let certificateSlider = new Swiper('.certificate__container', {
         slidesPerView: 'auto',
         keyboardControl: true,
-        nextButton: '.certificate-btn.next',
-        prevButton: '.certificate-btn.prev',
+        nextButton: '.certificate-btn.swiper-button-next',
+        prevButton: '.certificate-btn.swiper-button-prev',
         pagination: '.certificate-pagination',
         paginationType: 'fraction',
         breakpoints: {
@@ -19,8 +19,8 @@ $(document).ready(function () {
         spaceBetween: 30,
         pagination: '.certificate-subitem-pagination',
         paginationType: 'fraction',
-        nextButton: '.certificate-subbtn.next',
-        prevButton: '.certificate-subbtn.prev',
+        nextButton: '.main.swiper-button-next',
+        prevButton: '.main.swiper-button-prev',
     });
 
     $(document).on('click', '.certificate-item', function () {
@@ -30,6 +30,5 @@ $(document).ready(function () {
         .on('click', '.certificate-close', function () {
             $('.certificate-overlay').removeClass('active');
         });
-
 
 });
