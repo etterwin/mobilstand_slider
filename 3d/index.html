@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Несколько фото</title>
+
+    <link href="css/style.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="css/swiper.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/js/swiper.jquery.js"></script>
+    <script src="js/main.js"></script>
+</head>
+<body>
+
+
+<div class="slider-overlay" data-container="slider">
+
+    <!-- Add Arrows -->
+    <p class="slider-btn main prev swiper-button-prev"></p>
+    <p class="slider-btn main next swiper-button-next"></p>
+    <!-- end -->
+
+    <!-- zoom slider -->
+    <section class="slider-scale slider-zoom__container swiper-container" data-container="zoom">
+        <ul class="slider-zoom-list swiper-wrapper">
+            <li class="slider-zoom-item swiper-slide">
+                <div class="swiper-zoom-container">
+                    <img src="photo/1.jpeg" class="slider-zoom-img" alt=""/>
+                </div>
+            </li>
+            <li class="slider-zoom-item swiper-slide">
+                <div class="swiper-zoom-container">
+                    <img src="photo/2.jpg" class="slider-zoom-img" alt=""/>
+                </div>
+            </li>
+            <li class="slider-zoom-item swiper-slide">
+                <div class="swiper-zoom-container">
+                    <img src="photo/3.jpg" class="slider-zoom-img" alt=""/>
+                </div>
+            </li>
+            <li class="slider-zoom-item swiper-slide">
+                <div class="swiper-zoom-container">
+                    <img src="photo/4.png" class="slider-zoom-img" alt=""/>
+                </div>
+            </li>
+            <li class="slider-zoom-item swiper-slide">
+                <div class="swiper-zoom-container">
+                    <img src="photo/5.jpg" class="slider-zoom-img" alt=""/>
+                </div>
+            </li>
+            <li class="slider-zoom-item swiper-slide">
+                <div class="swiper-zoom-container">
+                    <img src="photo/1.jpeg" class="slider-zoom-img" alt=""/>
+                </div>
+            </li>
+            <li class="slider-zoom-item swiper-slide">
+                <div class="swiper-zoom-container">
+                    <img src="photo/2.jpg" class="slider-zoom-img" alt=""/>
+                </div>
+            </li>
+            <li class="slider-zoom-item swiper-slide">
+                <div class="swiper-zoom-container">
+                    <img src="photo/3.jpg" class="slider-zoom-img" alt=""/>
+                </div>
+            </li>
+            <li class="slider-zoom-item swiper-slide">
+                <div class="swiper-zoom-container">
+                    <img src="photo/4.png" class="slider-zoom-img" alt=""/>
+                </div>
+            </li>
+            <li class="slider-zoom-item swiper-slide">
+                <div class="swiper-zoom-container">
+                    <img src="photo/5.jpg" class="slider-zoom-img" alt=""/>
+                </div>
+            </li>
+        </ul>
+    </section>
+    <!-- end -->
+
+    <!-- close zoom slider -->
+    <span class="slider-zoom-close close-container" data-containerid="zoom"></span>
+    <!-- end -->
+
+    <h3 class="slider-zoom-text">Чтобы увеличить изображение, кликните 2 раза</h3>
+
+    <div class="slider-wrapper">
+
+        <span class="slider-close close-container" data-containerid="slider"></span>
+
+        <section class="slider-main">
+
+            <!-- Add Arrows -->
+            <span class="slider-btn main prev swiper-button-prev"></span>
+            <span class="slider-btn main next swiper-button-next"></span>
+            <!-- end -->
+
+            <div class="slider-scale slider__container swiper-container">
+                <ul class="slider-list swiper-wrapper">
+                    <li class="slider-item swiper-slide">
+                        <div class="slider-item-img-wrapper">
+                            <img src="photo/1.jpeg" class="slider-item-img" data-zoom-image="photo/1.jpeg" alt=""/>
+                        </div>
+                    </li>
+                    <li class="slider-item swiper-slide">
+                        <div class="slider-item-img-wrapper">
+                            <img src="photo/2.jpg" class="slider-item-img" data-zoom-image="photo/2.jpg" alt=""/>
+                        </div>
+                    </li>
+                    <li class="slider-item swiper-slide">
+                        <div class="slider-item-img-wrapper">
+                            <img src="photo/3.jpg" class="slider-item-img" data-zoom-image="photo/3.jpg" alt=""/>
+                        </div>
+                    </li>
+                    <li class="slider-item swiper-slide">
+                        <div class="slider-item-img-wrapper">
+                            <img src="photo/4.png" class="slider-item-img" data-zoom-image="photo/4.png" alt=""/>
+                        </div>
+                    </li>
+                    <li class="slider-item swiper-slide">
+                        <div class="slider-item-img-wrapper">
+                            <img src="photo/5.jpg" class="slider-item-img" data-zoom-image="photo/5.jpg" alt=""/>
+                        </div>
+                    </li>
+                    <li class="slider-item swiper-slide">
+                        <div class="slider-item-img-wrapper">
+                            <img src="photo/1.jpeg" class="slider-item-img" data-zoom-image="photo/1.jpeg" alt=""/>
+                        </div>
+                    </li>
+                    <li class="slider-item swiper-slide">
+                        <div class="slider-item-img-wrapper">
+                            <img src="photo/2.jpg" class="slider-item-img" data-zoom-image="photo/2.jpg" alt=""/>
+                        </div>
+                    </li>
+                    <li class="slider-item swiper-slide">
+                        <div class="slider-item-img-wrapper">
+                            <img src="photo/3.jpg" class="slider-item-img" data-zoom-image="photo/3.jpg" alt=""/>
+                        </div>
+                    </li>
+                    <li class="slider-item swiper-slide">
+                        <div class="slider-item-img-wrapper">
+                            <img src="photo/4.png" class="slider-item-img" data-zoom-image="photo/4.png" alt=""/>
+                        </div>
+                    </li>
+                    <li class="slider-item swiper-slide">
+                        <div class="slider-item-img-wrapper">
+                            <img src="photo/5.jpg" class="slider-item-img" data-zoom-image="photo/5.jpg" alt=""/>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+        </section>
+
+        <footer class="slider__footer">
+            <!-- Add Pagination -->
+            <div class="slider-pagination swiper-pagination"></div>
+
+        </footer>
+
+    </div>
+</div>
+
+</body>
+</html>
